@@ -253,11 +253,11 @@ JSON: {
 === Solicitando predicción ===  
 Status: 200  
 JSON: {  
-    "predictions": [  
-      {  
+"predictions": [  
+    {  
         "prediction": 1679.078195277709  
-      }  
-    ]  
+    }  
+  ]  
 }  
   
 ---
