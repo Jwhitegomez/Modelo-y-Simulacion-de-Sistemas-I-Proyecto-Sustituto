@@ -162,6 +162,8 @@ Dentro del directorio `fase-3` encontraremos los mismos archivos que en fase-2 c
 
 A diferencia de fase-2 no necesitaremos el script `entrypoint.sh` ya que debemos ejecutar `client.py` desde una terminal diferente de donde ejecutamos el contenedor.
 
+---
+
 ## Requisitos
 
 Antes de ejecutar el entorno Docker debemos tener algunas consideraciones:
@@ -170,7 +172,9 @@ Antes de ejecutar el entorno Docker debemos tener algunas consideraciones:
 - Si estamos trabajando en un entorno Windows, debemos asegurarnos de que Docker engine esté activo para poder ejecutar.
 - Como debemos ejecutar el script de python `client.py` desde nuestra máquina, debemos instalar la librería requests para ejecutar este script, además de tener claramente Python 3.10 o superior. En caso de no tener instalado requests, se ejecuta el siguiente comando en terminal:
 
-pip install requests
+    pip install requests
+
+---
 
 ## Paso a paso
 
@@ -185,6 +189,8 @@ En bien levantemos nuestro contenedor, lo que haremos será abrir una nueva term
 python client.py
 
 Lo que hará este script es consumir primero el endpoint /train, si nos dirigimos a la terminal donde está corriendo el contenedor podremos observar como se hace la petición y el proceso de entrenamiento que ya conocemos de la fase-2. Después de entrenar el modelo y tenerlo en el directorio /data, va a consumir el endpoint /predict enviando el cuerpo de una petición los datos de un viaje en formato JSON y nuestra API lo que hará será realizar transformaciones, cálculos y aplicar el modelo entrenado. Finalmente recibiremos una respuesta HTML estructurada con un JSON con los resultados, un código HTTP y mensaje de éxito o error.
+
+---
 
 ## Ejecución del contenedor
 
@@ -230,6 +236,7 @@ En el caso de que queramos cambiar los datos usados para la predicción, modific
 
 El contenedor no se apaga automáticamente, se quedará corriendo ya que la API se queda escuchando en espera de solicitudes, para detenerlo usamos Control+C en la terminal donde se ejecuta el contenedor y este se detendrá de forma segura.
 
+---
 
 ## Resultados esperados
 
